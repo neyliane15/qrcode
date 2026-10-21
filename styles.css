@@ -133,6 +133,7 @@ a { color: var(--lime); }
 .plaque-base { position: relative; z-index: 1; width: 78%; height: 22px; margin-top: -6px; border-radius: 0 0 10px 10px;
   background: linear-gradient(180deg, rgba(235, 245, 242, .55), rgba(170, 200, 192, .28)); box-shadow: 0 14px 24px -6px rgba(0, 0, 0, .55); clip-path: polygon(4% 0, 96% 0, 100% 100%, 0 100%); }
 .spec { margin: 0; text-align: center; color: var(--muted); font-size: 13.5px; }
+.spec-note { display: block; margin-top: 8px; padding: 8px 12px; border-radius: 10px; background: rgba(255, 213, 74, .12); border: 1px solid rgba(255, 213, 74, .35); color: #FFE08A; }
 .exports { display: grid; gap: 8px; }
 .exports .btn.lime { padding: 15px; font-size: 16px; }
 .exports .btn.ghost { padding: 11px; }

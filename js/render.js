@@ -18,7 +18,7 @@
     lucre: { label: 'Lucre escuro' },
     creme: { label: 'Creme' },
     canal: { label: 'Cor do canal' },
-    cristal: { label: 'Acrílico cristal' },
+    cristal: { label: 'Cristal (fundo transparente)' },
   };
 
   function themeColors(theme, t, brand) {

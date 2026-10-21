@@ -296,7 +296,8 @@
     const wrap = $('#plaque-wrap');
     wrap.className = 'plaque-wrap theme-' + state.custom[t.id].theme;
     wrap.style.setProperty('--r', (3 * scale) + 'px');
-    $('#spec').innerHTML = `<b>${size.label}</b> · arte em 300 dpi${state.print.bleed ? ' + 3 mm de sangria' : ''}${state.print.holes ? ` · furos a ${R.HOLE_OFFSET_MM} mm das bordas` : ''}`;
+    $('#spec').innerHTML = `<b>${size.label}</b> · arte em 300 dpi${state.print.bleed ? ' + 3 mm de sangria' : ''}${state.print.holes ? ` · furos a ${R.HOLE_OFFSET_MM} mm das bordas` : ''}`
+      + (state.custom[t.id].theme === 'cristal' ? '<span class="spec-note">Fundo transparente: no visualizador do celular/PC o fundo pode aparecer preto. Para uma arte com fundo, escolha “Creme” ou “Lucre escuro”.</span>' : '');
   }
 
   // ---------- exportação ----------
@@ -317,7 +318,7 @@
       const canvas = await render(t, 300, false);
       const blob = await new Promise((res) => canvas.toBlob(res, 'image/png'));
       downloadBlob(blob, fileBase(t) + '.png');
-      toast('PNG pronto para a gráfica ✔');
+      toast(state.custom[t.id].theme === 'cristal' ? 'PNG com fundo transparente baixado ✔' : 'PNG pronto para a gráfica ✔');
     } finally { busy(false); }
   }
 
